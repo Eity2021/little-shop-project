@@ -2,6 +2,17 @@
 
 * Live Link https://stellular-dodol-a7c85a.netlify.app/
 
+## This is just learning purpose. the little project are created in javascript dom .
+
+use technologies
+react js
+custom css
+react fontawesome
+core javascript
+js dom
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
