@@ -4,12 +4,12 @@
 
 ## This is just learning purpose. the little project are created in javascript dom .
 
-### use technologies
+# use technologies
 ### react js
-custom css
-react fontawesome
-core javascript
-js dom
+### custom css
+### react fontawesome
+### core javascript
+### js dom
 
 
 
