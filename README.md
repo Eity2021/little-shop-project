@@ -1,6 +1,17 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Live Link https://stellular-dodol-a7c85a.netlify.app/
+
+## This is just learning purpose. the little project are created in javascript dom .
+
+# use technologies
+#####  react js
+##### custom css
+##### react fontawesome
+##### core javascript
+##### js dom
+
+
 
 ## Available Scripts
 
