@@ -1,0 +1,89 @@
+.login_area {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  border: 1px solid #39395f;
+  height: 460px;
+  width: 360px;
+  border-radius: 8px;
+  margin: 40px 0px 0px 0px;
+  -webkit-box-shadow: -7px 9px 7px 1px #39395f;
+  box-shadow: -7px 9px 7px 1px #39395f;
+}
+
+.heading {
+  text-align: center;
+  margin: 30px 0px 0px 0px;
+}
+.form_area {
+  display: flex;
+  justify-content: center;
+}
+
+.navigate {
+  display: flex;
+  justify-content: center;
+}
+.inputField {
+  width: 300px;
+  height: 30px;
+  border-radius: 3px;
+  padding: 0px 4px;
+  border: 1px solid #95a0a7;
+}
+.log_button {
+  margin: 30px 0px 0px 0px;
+}
+.log_button Button {
+  width: 308px;
+  height: 34px;
+  background: #39395f;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+.form_name {
+  margin: 15px 0px 8px 0px;
+  font-size: 13px;
+  color: #666;
+}
+
+::placeholder {
+  color: #95a0a7;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.account {
+  margin: 10px 0px 0px 0px;
+  font-size: 12px;
+}
+
+.link {
+  color: #39395f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.log_icons {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px 0px 0px;
+}
+
+.logIcon {
+  font-size: 25px;
+  margin: 0px 10px 0px 0px;
+  height: 36px;
+  width: 36px;
+  border: 1px solid #95a0a7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: #39395f;
+  cursor: pointer;
+}
