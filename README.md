@@ -5,11 +5,11 @@
 ## This is just learning purpose. the little project are created in javascript dom .
 
 # use technologies
-######  react js
-### custom css
-### react fontawesome
-### core javascript
-### js dom
+#####  react js
+##### custom css
+##### react fontawesome
+##### core javascript
+##### js dom
 
 
 
