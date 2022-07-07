@@ -6,60 +6,49 @@ import Button from "react-bootstrap/Button";
 import { FaGoogle } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
-import auth from './../../firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from "./../../firebase.init";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
-
-
-
-
 const RegistrationPage = () => {
+  const navigate = useNavigate();
 
-const navigate = useNavigate()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
-const [email,setEmail] = useState('');
-const [password,setPassword] = useState('');
-const [confirmPassword,setConfirmPassword] = useState('');
-const [error,setError] = useState('');
-
-
-
-const handleEmailBlur = (event) => {
+  const handleEmailBlur = (event) => {
     setEmail(event.target.value);
-}
+  };
 
-const handlePasswordBlur = (event) => {
+  const handlePasswordBlur = (event) => {
     setPassword(event.target.value);
-}
+  };
 
-const handleConfirmPasswordBlur = (event) => {
+  const handleConfirmPasswordBlur = (event) => {
     setConfirmPassword(event.target.value);
-}
+  };
 
-const [  createUserWithEmailAndPassword ,user] = useCreateUserWithEmailAndPassword(auth)
+  const [createUserWithEmailAndPassword, user] =
+    useCreateUserWithEmailAndPassword(auth);
 
-if(user){
-  navigate('/shop')
-}
+  if (user) {
+    navigate("/shop");
+  }
 
-
-const handleCreateAccount = (event) => {
+  const handleCreateAccount = (event) => {
     event.preventDefault();
-    if(password !== confirmPassword){
-        setError('password does not match')
-        return;
-
+    if (password !== confirmPassword) {
+      setError("password does not match");
+      return;
     }
-    if(password.length < 6){
-        setError('password must be 6 character')
+    if (password.length < 6) {
+      setError("password must be 6 character");
     }
 
-    createUserWithEmailAndPassword(email, password)
-}
-
-
-
+    createUserWithEmailAndPassword(email, password);
+  };
 
   return (
     <div className="login_area">
@@ -73,7 +62,7 @@ const handleCreateAccount = (event) => {
                 className="inputField"
                 type="email"
                 placeholder="Email"
-                name='email'
+                name="email"
                 onBlur={handleEmailBlur}
               />
             </Form.Group>

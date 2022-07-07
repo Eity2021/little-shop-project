@@ -1,18 +1,19 @@
 import React from "react";
 import { removeFromDb } from "../../utilities/fakedb";
 import useProducts from "../Hooks/useProducts";
-import Order_info from "../Order_info/Order_info";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import useCart from "./../Hooks/useCart";
 import "./Order.css";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import OrderInfo from "../OrderInfo/OrderInfo";
 
 const Order = () => {
-  const [products, setProducts] = useProducts();
-  const [cart, setCart] = useCart(products);
 
+  const navigate = useNavigate();
+  const [products] = useProducts();
+  const [cart, setCart] = useCart(products);
 
 
   const handleRemoveItems = (product) => {
@@ -34,17 +35,17 @@ const Order = () => {
       </div>
 
       <div className="order_info">
-        <Order_info cart={cart}>
+        <OrderInfo cart={cart}>
 
-          <Link to="/inventory ">
-            <button className="review">
+          
+            <button  onClick={() => navigate('/shipment')}    className="review">
               Proceed Checkout
               <span className="icon">
                 <FontAwesomeIcon icon={faArrowAltCircleRight} />
               </span>
             </button>
-          </Link>
-        </Order_info>
+         
+        </OrderInfo>
       </div>
     </div>
   );
