@@ -6,11 +6,12 @@ import { FaGoogle } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
 import "./LogInPage.css";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const LogInPage = () => {
 
+  //signIn email/password
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,20 +22,32 @@ const LogInPage = () => {
     setPassword(event.target.value);
   };
 
-  const [signInWithEmailAndPassword, user, loading , error] =
-    useSignInWithEmailAndPassword(auth);
-    let navigate = useNavigate();
-    let location = useLocation();
+  const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
-    let from = location.state?.from?.pathname || "/";
+
+  // google authentication
+const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
+// const handleGoogleAuth = () => {
+ 
+// }
+
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
   if (user) {
-    navigate(from, {replace :true});
+    navigate(from, { replace: true });
   }
-
+   if(googleUser){
+    navigate(from, { replace: true });
+   }
   const handleFormAdd = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
   };
+
+
+
 
   return (
     <div className="login_area">
@@ -70,7 +83,6 @@ const LogInPage = () => {
                 login
               </Button>
             </div>
-            
           </Form>
         </div>
 
@@ -86,7 +98,7 @@ const LogInPage = () => {
 
         <div className="log_icons">
           <span className="logIcon">
-            <FaGoogle />
+            <FaGoogle onClick={() => signInWithGoogle()} />
           </span>
           <span className="logIcon">
             <BsFacebook />

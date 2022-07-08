@@ -1,8 +1,10 @@
 .order_page{
     display: flex;
-    margin-top: 50px;
+    justify-content: space-between;
+    height: 100vh;
 }
 
 .icon{
     margin-left: 10px;
 }
+

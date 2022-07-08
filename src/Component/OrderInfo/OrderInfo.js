@@ -15,6 +15,7 @@ const OrderInfo = ({cart,children}) => {
 
     return (
        <div className="order_area">
+      <div className='orders'>
       <h4>Order Summary</h4>
       <p>Selected Items : {quantity}</p>
       <p>Total price : ${total}</p>
@@ -27,6 +28,7 @@ const OrderInfo = ({cart,children}) => {
       </button>
       <br />
      {children} 
+      </div>
     </div>
     );
 };

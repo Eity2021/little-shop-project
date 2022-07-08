@@ -6,7 +6,6 @@ import Product from "../Product/Product";
 import "./Shops.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowAltCircleRight,
   faFolder,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
@@ -56,7 +55,7 @@ const Shops = () => {
   return (
     <div className="shop_container">
       <div>
-        <h3>This is For Products : {products.length}</h3>
+        <h3 className="products-heading">Products : {products.length}</h3>
 
         <div className="shop_grid">
           {products.map((product) => (
@@ -71,12 +70,12 @@ const Shops = () => {
       <div className="order_info">
         <OrderInfo cart={cart}>
 
-          <button onClick={() => alert('click')} className="review">
+          <Link to="/order"><button className="review">
             Reviews Order{" "}
             <span className="icon">
               <FontAwesomeIcon icon={faFolder} />
             </span>
-          </button>
+          </button></Link>
         </OrderInfo>
       </div>
     </div>
